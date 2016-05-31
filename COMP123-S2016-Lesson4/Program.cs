@@ -29,6 +29,11 @@ namespace COMP123_S2016_Lesson4
 
             tommy.Studies();
 
+            tommy.Courses.Add(new Course("COMP123", "Programming 2"));
+            tommy.Courses.Add(new Course("COMP125", "Client-Side Web Development"));
+
+            tommy.ShowCourses();
+
             Console.WriteLine();
 
             // create instance of the Teacher class

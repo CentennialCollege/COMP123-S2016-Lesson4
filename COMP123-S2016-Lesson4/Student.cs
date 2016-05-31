@@ -18,6 +18,7 @@ namespace COMP123_S2016_Lesson4
     {
         // PRIVATE INSTANCE VARIABLES +++++++++++++++++++++++++++++++++++++++++
         private string _studentID;
+        private List<Course> _courses = new List<Course>();
 
         // PUBLIC PROPERTIES ++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -40,6 +41,23 @@ namespace COMP123_S2016_Lesson4
             }
         }
 
+        /**
+         * <summary>
+         * This read-only property gets a reference to the _courses - a List object of Course type
+         * </summary>
+         * 
+         * @readOnly
+         * @property Courses
+         */
+        public List<Course> Courses
+        {
+            get
+            {
+                return this._courses;
+            }
+            
+        }
+
         // CONSTRUCTORS +++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
         /**
@@ -57,6 +75,7 @@ namespace COMP123_S2016_Lesson4
             :base(name, age)
         {
             this.StudentID = studentID;
+
         }
 
         // PUBLIC METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -72,6 +91,27 @@ namespace COMP123_S2016_Lesson4
         public void Studies()
         {
             Console.WriteLine(this.Name + " studies.");
+        }
+
+        /**
+         * <summary>
+         * This method lists all the courses the student is currently enrollled in.
+         * </summary>
+         * 
+         * @method ShowCourses
+         * @returns {void}
+         */
+        public void ShowCourses()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Course List");
+            Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++");
+            foreach (Course course in this._courses)
+            {
+                Console.WriteLine("+ " + course.Code + " " + course.Description);
+            }
+            Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++");
+            Console.WriteLine();
         }
     }
 }
