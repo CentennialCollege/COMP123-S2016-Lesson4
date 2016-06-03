@@ -37,7 +37,7 @@ namespace COMP123_S2016_Lesson4
 
             set
             {
-                this._studentID = value;
+                this._studentID = value;   
             }
         }
 
